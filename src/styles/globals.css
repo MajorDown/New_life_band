@@ -1,0 +1,30 @@
+/*GLOBALS*/
+:root {
+  --colorBack: rgb(23, 35, 36);
+  --colorFont: rgb(225, 225, 225);
+  --colorShadow: rgb(126, 126, 126);
+  --colorStar: rgb(173, 104, 0);
+  --colorIcon: rgb(0, 96, 102);
+  --fontTitle: 'Orbitron', sans-serif;
+  --fontNormal: 'Montserrat', sans-serif;
+  --sizeTitle: 30px;
+  --sizeSubTitle: 20px;
+  --sizeText: 15px;
+  --radius: 1vw;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: var(--fontNormal);
+  font-size: var(--sizeText);
+  color: var(--colorFont);
+}
+
+/*IMPORT CSS (DESKTOP FIRST)*/
+@import url('animations.css');
+@import url('admin.css');
+@import url('desktop.css');
+@import url('tablet.css') screen and (max-width: 768px);
+@import url('mobile.css') screen and (max-width: 1024px);

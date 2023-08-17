@@ -1,0 +1,100 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--colorBack);
+}
+
+header,
+main,
+footer {
+    width: 98%;
+    max-width: 1440px;
+}
+
+header {
+    height: 275px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#headerTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav li {
+    position: absolute;
+    list-style: none;
+}
+
+a {
+    font-family: var(--fontTitle);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: var(--sizeTitle);
+    transition: 0.2s;
+}
+
+a:active {
+    text-decoration: underline;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: var(--colorStar);
+    transition: 0.2s;
+}
+
+#linkToBio {
+    top: 35px;
+    left: 3%;
+}
+
+#linkToDates {
+    top: 70px;
+    left: 20%;
+}
+
+#linkToMedias {
+    top: 70px;
+    right: 20%;
+}
+
+#linkToNews {
+    top: 35px;
+    right: 2%;
+}
+
+#headerUnderline {
+    margin-top: 10px;
+    width: 400px;
+    height: 1px;
+    border: solid 2px var(--colorShadow);
+}
+
+/***********MAIN************************/
+
+main {
+    margin-top: 30px;
+}
+
+/**********BIO********************************/
+
+article {
+    margin-bottom: 30px;
+    border-left: solid 3px var(--colorShadow);
+    border-bottom: solid 3px var(--colorShadow);
+    border-radius: var(--radius);
+    display: flex;
+}
+
+article p {
+    margin: 20px;
+}
