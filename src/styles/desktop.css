@@ -13,6 +13,8 @@ footer {
     max-width: 1440px;
 }
 
+/**********HEADER****************************/
+
 header {
     height: 275px;
     position: relative;
@@ -97,4 +99,21 @@ article {
 
 article p {
     margin: 20px;
+}
+
+/**********BREAKPOINT 1024PX******************/
+
+@media screen and (max-width: 1024px) {
+    header {
+        height: 200px;
+    }
+
+    #headerTitle img {
+        width: 179px;
+        height: 111px;
+    }
+
+    a {
+        font-size: 3vw;
+    }
 }

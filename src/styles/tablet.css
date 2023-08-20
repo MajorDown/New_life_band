@@ -1,0 +1,21 @@
+h1 {
+    font-size: 2vw;
+}
+
+#headerUnderline {
+    width: 300px;
+}
+
+
+@media screen and (max-width: 560px) {
+    header {
+        height: 150px;
+    }
+
+
+    #headerTitle img {
+        width: 20vw;
+        height: 12.4vw;
+    }
+
+}
