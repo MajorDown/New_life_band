@@ -1,0 +1,9 @@
+@keyframes siteOpening {
+    0% {
+        background-color: var(--colorFont);
+    }
+
+    100% {
+        background-color: var(--colorBack);
+    }
+}

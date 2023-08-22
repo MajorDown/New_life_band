@@ -3,7 +3,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: var(--colorBack);
+    animation: siteOpening 2s;
+    background-color: var(--colorBack);
 }
 
 header,
@@ -44,11 +45,6 @@ a {
     transition: 0.2s;
 }
 
-a:active {
-    text-decoration: underline;
-    transition: 0.2s;
-}
-
 a:hover {
     color: var(--colorStar);
     transition: 0.2s;
@@ -81,6 +77,10 @@ a:hover {
     border: solid 2px var(--colorShadow);
 }
 
+.active {
+    text-decoration: underline;
+}
+
 /***********MAIN************************/
 
 main {
@@ -89,16 +89,65 @@ main {
 
 /**********BIO********************************/
 
-article {
+.bioArticle {
     margin-bottom: 30px;
     border-left: solid 3px var(--colorShadow);
+    border-right: solid 3px var(--colorShadow);
     border-bottom: solid 3px var(--colorShadow);
     border-radius: var(--radius);
-    display: flex;
+    overflow: hidden;
 }
 
-article p {
-    margin: 20px;
+.bioArticleImageContainer {
+    border-radius: var(--radius);
+    overflow: hidden;
+    width: 300px;
+}
+
+.bioArticleTextContainer {
+    padding: 30px;
+    min-width: auto;
+}
+
+.bioArticleTextContainer h3 {
+    padding-bottom: 15px;
+}
+
+
+
+/**********ACCUEIL****************************/
+
+#accueil {
+    display: flex;
+    justify-content: center;
+
+}
+
+#accueil div {
+    width: fit-content;
+    height: fit-content;
+    border-radius: var(--radius);
+    overflow: hidden;
+    z-index: 2;
+    position: relative;
+    background-color: var(--colorBack);
+}
+
+#accueil div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0px 0px 17px 17px rgb(23, 35, 36);
+    z-index: 2;
+}
+
+#accueil img {
+    z-index: 1;
+    position: relative;
+    object-fit: cover;
 }
 
 /**********BREAKPOINT 1024PX******************/
