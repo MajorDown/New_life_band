@@ -36,6 +36,20 @@ const SiteData = {
       url: "/accueil.jpg",
     },
   },
+  dates: [
+    {
+      place: "La Sirène",
+      city: "la Rochelle",
+      department: 17,
+      day: "13.06.2024",
+    },
+    {
+      place: "La minute Blonde",
+      city: "Fontenay-le-Comte",
+      department: 85,
+      day: "14.07.2024",
+    },
+  ],
 };
 
 export default SiteData;

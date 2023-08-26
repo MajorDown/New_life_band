@@ -150,6 +150,15 @@ main {
     object-fit: cover;
 }
 
+/**********FOOTER*****************************/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /**********BREAKPOINT 1024PX******************/
 
 @media screen and (max-width: 1024px) {
