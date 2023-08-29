@@ -1,39 +1,36 @@
 const SiteData = {
   bio: {
-    intro: {
-      title: "kikou",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, pariatur?",
-      vignette: "kikou",
-      url: "/accueil.jpg",
-    },
+    title: "Il était une fois, dans une cave vendéenne...",
+    bioImage_url: "/bio_band.jpg",
+    intro:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti eum repudiandae qui! Et maiores delectus voluptas? Doloremque, mollitia fugit! Fugiat illum iure aspernatur repudiandae esse saepe obcaecati distinctio. Rem qui aperiam molestiae ipsum dolorem laboriosam perferendis praesentium velit minus error vitae assumenda aliquid unde recusandae reiciendis, quae tenetur facilis cupiditate.",
     Emile: {
-      title: "lolilol",
+      title: "Emile ~ Vocal / Guitar",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores et commodi hic? Incidunt, sunt quis?",
       vignette: "lolilol",
-      url: "/accueil.jpg",
+      url: "/bio_emile.jpg",
     },
     Philippe: {
-      title: "lolilol",
+      title: "Philippe ~ Drum / Percussions",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores et commodi hic? Incidunt, sunt quis?",
       vignette: "lolilol",
-      url: "/accueil.jpg",
+      url: "/bio_philippe.jpg",
     },
     Romain: {
-      title: "lolilol",
+      title: "Romain ~ Bass",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores et commodi hic? Incidunt, sunt quis?",
       vignette: "lolilol",
-      url: "/accueil.jpg",
+      url: "/bio_romain.jpg",
     },
     Jean_Paul: {
-      title: "lolilol",
+      title: "Jean-Paul ~ Keyboards",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores et commodi hic? Incidunt, sunt quis?",
       vignette: "lolilol",
-      url: "/accueil.jpg",
+      url: "/bio_jean-paul.jpg",
     },
   },
   dates: [

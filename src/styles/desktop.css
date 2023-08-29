@@ -87,7 +87,31 @@ main {
     margin-top: 30px;
 }
 
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    padding: 30px;
+    font-size: var(--sizeTitle);
+    text-align: center;
+    font-family: var(--fontTitle);
+}
+
 /**********BIO********************************/
+
+#bioImage {
+    border-radius: var(--radius);
+    margin: 30px;
+}
+
+#bioDescription {
+    width: 80%;
+    text-align: center;
+    margin: 30px 30px 50px 30px;
+}
 
 .bioArticle {
     margin-bottom: 30px;
