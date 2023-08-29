@@ -6,6 +6,29 @@ h1 {
     width: 300px;
 }
 
+h2 {
+    font-size: 3vw;
+}
+
+#bioImage {
+    width: 75vw;
+    height: 42vw;
+
+}
+
+.bioArticle {
+    flex-direction: column;
+}
+
+.bioArticleImageContainer {
+    min-width: 100%;
+    max-height: 100%;
+}
+
+.bioArticleImageContainer img {
+    width: 100%;
+    height: 100%;
+}
 
 @media screen and (max-width: 560px) {
     header {
@@ -17,5 +40,6 @@ h1 {
         width: 20vw;
         height: 12.4vw;
     }
+
 
 }

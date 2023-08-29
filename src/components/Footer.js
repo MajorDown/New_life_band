@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer>
       <p>© Copyright 2023 - Tout droit réservé</p>
-      <p>powered by Romain Fouillaron ~ Webmaster_Next.js</p>
+      <p>powered by Romain Fouillaron with Next.js & MajorDB</p>
     </footer>
   );
 }

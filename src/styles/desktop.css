@@ -103,8 +103,11 @@ h2 {
 /**********BIO********************************/
 
 #bioImage {
-    border-radius: var(--radius);
     margin: 30px;
+    border-left: solid 3px var(--colorShadow);
+    border-right: solid 3px var(--colorShadow);
+    border-bottom: solid 3px var(--colorShadow);
+    border-radius: var(--radius);
 }
 
 #bioDescription {
@@ -120,21 +123,39 @@ h2 {
     border-bottom: solid 3px var(--colorShadow);
     border-radius: var(--radius);
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.imageOnLeft {
+    flex-direction: row-reverse;
+}
+
+.imageOnRight {
+    flex-direction: row;
 }
 
 .bioArticleImageContainer {
     border-radius: var(--radius);
     overflow: hidden;
-    width: 300px;
+    min-width: 300px;
+    max-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .bioArticleTextContainer {
     padding: 30px;
-    min-width: auto;
 }
 
 .bioArticleTextContainer h3 {
     padding-bottom: 15px;
+}
+
+.imageOnLeft .bioArticleTextContainer h3,
+.imageOnLeft .bioArticleTextContainer p {
+    text-align: end;
 }
 
 
