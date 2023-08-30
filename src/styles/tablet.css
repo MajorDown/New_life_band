@@ -30,6 +30,16 @@ h2 {
     height: 100%;
 }
 
+.dateArticle {
+    width: 90%;
+}
+
+.dateArticle h3,
+.dateDay,
+.dateCity {
+    font-size: 2vw;
+}
+
 @media screen and (max-width: 560px) {
     header {
         height: 150px;

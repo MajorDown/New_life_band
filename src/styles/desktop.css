@@ -158,7 +158,48 @@ h2 {
     text-align: end;
 }
 
+/**********DATE*****************************/
 
+.dateArticle {
+    display: flex;
+    gap: 10px;
+    width: 75%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-left: solid 3px var(--colorShadow);
+    border-right: solid 3px var(--colorShadow);
+    border-bottom: solid 3px var(--colorShadow);
+    border-radius: var(--radius);
+}
+
+.dateDay {
+    order: 1;
+}
+
+#dateSection h3 {
+    order: 2;
+}
+
+.dateCity {
+    order: 3;
+}
+
+.leaflet-container {
+    width: 90%;
+    height: 80vw;
+    margin-bottom: 30px;
+    border-left: solid 3px var(--colorShadow);
+    border-right: solid 3px var(--colorShadow);
+    border-bottom: solid 3px var(--colorShadow);
+    border-radius: var(--radius);
+}
+
+.leaflet-container a {
+    font-family: var(--fontNormal);
+    font-size: 10px;
+}
 
 /**********ACCUEIL****************************/
 
@@ -173,7 +214,6 @@ h2 {
     height: fit-content;
     border-radius: var(--radius);
     overflow: hidden;
-    z-index: 2;
     position: relative;
     background-color: var(--colorBack);
 }
