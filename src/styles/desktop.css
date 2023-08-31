@@ -186,6 +186,20 @@ h2 {
     order: 3;
 }
 
+#mapToggler {
+    padding: 10px;
+    margin: 30px;
+    border-radius: var(--radius);
+    color: var(--colorFont);
+    background-color: var(--colorShadow);
+    transition: 0.3s;
+}
+
+#mapToggler:hover {
+    background-color: var(--colorStar);
+    transition: 0.3s
+}
+
 .leaflet-container {
     width: 90%;
     height: 80vw;
