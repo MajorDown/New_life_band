@@ -13,7 +13,7 @@ const Dates = () => {
   const [wantMap, setWantMap] = useState(false);
 
   const placeIcon = new Icon({
-    iconUrl: require("../dates/placeIcon.png"),
+    iconUrl: require("../dates/place_Icon.png"),
     iconSize: [15, 30],
   });
 
