@@ -5,7 +5,7 @@ import MediaArticle from "@/components/MediaArticle";
 const Medias = () => {
   return (
     <section id="mediasSection">
-      <h3>Un peu de musique dans ce monde de brut</h3>
+      <h2>Un peu de musique dans ce monde de brut</h2>
       {SiteData.medias.map((media) => (
         <MediaArticle src={media} />
       ))}

@@ -1,12 +1,10 @@
 import React from "react";
 
-const audioPlayer = () => {
+const audioPlayer = ({ src }) => {
   return (
-    <div className="audioPlayer">
-      <audio src="chemin_vers_votre_fichier_audio.mp3" controls>
-        Votre navigateur ne prend pas en charge l'élément audio.
-      </audio>
-    </div>
+    <audio src={src} controls>
+      Votre navigateur ne prend pas en charge l'élément audio.
+    </audio>
   );
 };
 

@@ -215,6 +215,26 @@ h2 {
     font-size: 10px;
 }
 
+/**********MEDIAS*******************************/
+
+.mediaArticle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    width: 50%;
+}
+
+.mediaArticle audio {
+    width: 100%;
+}
+
+.mediaArticle video {
+    border-radius: 30px;
+    width: 100%;
+}
+
 /**********ACCUEIL****************************/
 
 #accueil {

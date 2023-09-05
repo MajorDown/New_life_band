@@ -49,19 +49,19 @@ const SiteData = {
   ],
   medias: [
     {
-      typeOfMedia: "video",
-      title: "La bite a dudule",
-      src: "/audios/",
+      typeOfMedia: "audio",
+      title: "Trajectoire",
+      src: "/audios/trajectoire.mp3",
     },
     {
       typeOfMedia: "audio",
-      title: "La kekete a bichette",
-      src: "/audios/",
+      title: "Hip Hop",
+      src: "/audios/hip_hop.mp3",
     },
     {
       typeOfMedia: "video",
-      title: "le cucu a fufu",
-      src: "/audios/",
+      title: "Trajectoire ~ live du 19/08/23",
+      src: "/videos/trajectoire.mp4",
     },
   ],
 };
