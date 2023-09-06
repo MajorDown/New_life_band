@@ -203,6 +203,7 @@ h2 {
 .leaflet-container {
     width: 90%;
     height: 80vw;
+    max-height: 800px;
     margin-bottom: 30px;
     border-left: solid 3px var(--colorShadow);
     border-right: solid 3px var(--colorShadow);
@@ -213,6 +214,18 @@ h2 {
 .leaflet-container a {
     font-family: var(--fontNormal);
     font-size: 10px;
+}
+
+.leaflet-popup-content p {
+    color: var(--colorBack);
+    font-family: var(--fontNormal);
+    font-weight: 700;
+    text-align: center;
+}
+
+a.leaflet-popup-close-button span {
+    color: var(--colorBack);
+    font-size: 2vw;
 }
 
 /**********MEDIAS*******************************/

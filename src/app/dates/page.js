@@ -12,10 +12,10 @@ const Dates = () => {
   const [markers, setMarkers] = useState([]);
   const [wantMap, setWantMap] = useState(false);
 
-  const placeIcon = new Icon({
-    iconUrl: require("../dates/place_Icon.png"),
-    iconSize: [15, 30],
-  });
+  // const placeIcon = new Icon({
+  //   iconUrl: require("./place_Icon.png"),
+  //   iconSize: [15, 30],
+  // });
 
   // Créez une fonction pour traiter les données et générer les marqueurs
   const generateMarkers = () => {
@@ -85,7 +85,7 @@ const Dates = () => {
           />
           {markers.map((marker, index) => {
             return (
-              <Marker key={index} position={marker.geocode} icon={placeIcon}>
+              <Marker key={index} position={marker.geocode}>
                 <Popup>
                   <p>
                     {marker.place}, le {marker.day}

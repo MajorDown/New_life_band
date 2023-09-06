@@ -12,7 +12,7 @@ const Header = () => {
       <div id="headerTitle">
         <Link href="/">
           <Image
-            src="/header_logo.png"
+            src="/images/header_logo.png"
             alt="New Life"
             width={298}
             height={185}
