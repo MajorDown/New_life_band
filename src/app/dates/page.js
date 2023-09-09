@@ -1,21 +1,16 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { Icon } from "leaflet";
-import SiteData from "@/data/siteData";
-import cities from "@/data/cities";
+import { WebSiteContext } from "../layout";
+import cities from "@/majorDB/city/city.DB.json";
 import DateArticle from "@/components/DateArticle";
 
 const Dates = () => {
+  let SiteData = useContext(WebSiteContext);
   const [mapKey, setMapKey] = useState(Date.now());
   const [markers, setMarkers] = useState([]);
   const [wantMap, setWantMap] = useState(false);
-
-  // const placeIcon = new Icon({
-  //   iconUrl: require("./place_Icon.png"),
-  //   iconSize: [15, 30],
-  // });
 
   // Créez une fonction pour traiter les données et générer les marqueurs
   const generateMarkers = () => {

@@ -291,6 +291,10 @@ footer {
     align-items: center;
 }
 
+footer p {
+    text-align: center;
+}
+
 /**********BREAKPOINT 1024PX******************/
 
 @media screen and (max-width: 1024px) {

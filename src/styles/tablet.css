@@ -40,6 +40,10 @@ h2 {
     font-size: 2vw;
 }
 
+.mediaArticle {
+    width: 90%;
+}
+
 @media screen and (max-width: 560px) {
     header {
         height: 150px;

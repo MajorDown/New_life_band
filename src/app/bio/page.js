@@ -1,9 +1,12 @@
-import BioArticle from "@/components/BioArticle";
-import React from "react";
-import SiteData from "../../data/siteData";
+"use client";
+import React, { useContext } from "react";
 import Image from "next/image";
+import BioArticle from "@/components/BioArticle";
+import { WebSiteContext } from "../layout";
 
 const Bio = () => {
+  let SiteData = useContext(WebSiteContext);
+
   return (
     <section id="bioSection">
       <h2>{SiteData.bio.title}</h2>

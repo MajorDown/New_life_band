@@ -1,6 +1,11 @@
+"use client";
 import "@/styles/globals.css";
+import webSiteData from "@/majorDB/webSite/website.DB.json";
 import Header from "@/components/Header.js";
 import Footer from "@/components/Footer.js";
+import { createContext } from "react";
+
+export const WebSiteContext = createContext();
 
 export default function RootLayout({ children }) {
   return (
@@ -23,9 +28,11 @@ export default function RootLayout({ children }) {
         ></link>
       </head>
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <WebSiteContext.Provider value={webSiteData}>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </WebSiteContext.Provider>
       </body>
     </html>
   );

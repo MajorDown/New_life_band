@@ -1,10 +1,12 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { WebSiteContext } from "@/app/layout";
 
 const Header = () => {
+  const SiteData = useContext(WebSiteContext);
   const pathname = usePathname();
 
   return (
@@ -12,42 +14,27 @@ const Header = () => {
       <div id="headerTitle">
         <Link href="/">
           <Image
-            src="/images/header_logo.png"
-            alt="New Life"
+            src={SiteData.header.logo_src}
+            alt={SiteData.header.logo_alt}
             width={298}
             height={185}
           />
         </Link>
-        <h1>Site Officiel du groupe de blues rock </h1>
+        <h1>{SiteData.header.title}</h1>
       </div>
       <nav>
         <ul>
-          <li id="linkToMedias">
-            <Link
-              href="/medias"
-              className={pathname === "/medias" ? "active" : ""}
-            >
-              Medias
-            </Link>
-          </li>
-          <li id="linkToDates">
-            <Link
-              href="/dates"
-              className={pathname === "/dates" ? "active" : ""}
-            >
-              Dates
-            </Link>
-          </li>
-          <li id="linkToBio">
-            <Link href="/bio" className={pathname === "/bio" ? "active" : ""}>
-              Bio
-            </Link>
-          </li>
-          <li id="linkToNews">
-            <Link href="/news" className={pathname === "/news" ? "active" : ""}>
-              News
-            </Link>
-          </li>
+          {SiteData.header.navbar &&
+            SiteData.header.navbar.map((navLink, index) => (
+              <li key={index} id={`linkTo${navLink.text}`}>
+                <Link
+                  href={navLink.href}
+                  className={pathname === `${navLink.href}` ? "active" : ""}
+                >
+                  {navLink.text}
+                </Link>
+              </li>
+            ))}
         </ul>
       </nav>
       <div id="headerUnderline"></div>
