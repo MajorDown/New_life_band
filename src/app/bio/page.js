@@ -18,10 +18,10 @@ const Bio = () => {
         height={300}
       />
       <p id="bioDescription">{SiteData.bio.intro}</p>
-      <BioArticle src={SiteData.bio.Emile} imagePosition="right" />
-      <BioArticle src={SiteData.bio.Philippe} imagePosition="left" />
-      <BioArticle src={SiteData.bio.Romain} imagePosition="right" />
-      <BioArticle src={SiteData.bio.Jean_Paul} imagePosition="left" />
+      <BioArticle src={SiteData.bio.emile} imagePosition="right" />
+      <BioArticle src={SiteData.bio.philippe} imagePosition="left" />
+      <BioArticle src={SiteData.bio.romain} imagePosition="right" />
+      <BioArticle src={SiteData.bio.jean_paul} imagePosition="left" />
     </section>
   );
 };
