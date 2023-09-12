@@ -12,6 +12,15 @@ const Dates = () => {
   const [markers, setMarkers] = useState([]);
   const [wantMap, setWantMap] = useState(false);
 
+  useEffect(() => {
+    if (wantMap) {
+      // Mettre à jour les marqueurs lorsque les données changent
+      const newMarkers = generateMarkers();
+      setMarkers(newMarkers);
+      setMapKey(Date.now());
+    }
+  }, [wantMap]);
+
   // Créez une fonction pour traiter les données et générer les marqueurs
   const generateMarkers = () => {
     const newMarkers = SiteData.dates.map((date) => {
@@ -45,15 +54,6 @@ const Dates = () => {
     console.log(newMarkers);
     return newMarkers.filter((marker) => marker !== null);
   };
-
-  useEffect(() => {
-    if (wantMap) {
-      // Mettre à jour les marqueurs lorsque les données changent
-      const newMarkers = generateMarkers();
-      setMarkers(newMarkers);
-      setMapKey(Date.now());
-    }
-  }, [wantMap]);
 
   return (
     <section id="dateSection">

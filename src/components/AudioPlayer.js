@@ -3,7 +3,7 @@ import React from "react";
 const audioPlayer = ({ src }) => {
   return (
     <audio src={src} controls>
-      Votre navigateur ne prend pas en charge l'élément audio.
+      <p>Votre navigateur ne prend pas en charge l&apos;élément audio.</p>
     </audio>
   );
 };
