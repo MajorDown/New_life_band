@@ -20,6 +20,7 @@
   font-family: var(--fontNormal);
   font-size: var(--sizeText);
   color: var(--colorFont);
+  color: rgba(0, 0, 0, 0.426);
 }
 
 
