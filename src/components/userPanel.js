@@ -1,10 +1,8 @@
+"use client";
 import React, { useEffect, useState } from "react";
-import Modal from "./Modal";
 
-const ConnexionModal = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
-  const [userId, setUserId] = useState(
-    localStorage.getItem(`${securityItem}_userId` || null)
-  );
+const UserPanel = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
+  const [userId, setUserId] = useState(null);
   const [isConnected, setIsConnected] = useState(false);
   const [wantToCreateUser, setWantToCreateuser] = useState(false);
   const [user, setUser] = useState("");
@@ -16,6 +14,13 @@ const ConnexionModal = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
   const [isPasswordSecured, setIsPasswordSecured] = useState(false);
   const [isPasswordMatching, setIsPasswordMatching] = useState(false);
   const [isFormCompleted, setIsFormCompleted] = useState(false);
+
+  // INITIALISATION DU USERID COTE CLIENT
+  useEffect(() => {
+    if (window) {
+      setUserId(localStorage.getItem(`${securityItem}_userId`) || null);
+    }
+  }, [securityItem]);
 
   // VERIFICATION DE LA PRESENCE D'UN USERID
   useEffect(() => {
@@ -60,7 +65,8 @@ const ConnexionModal = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
   }, [mail, isPasswordSecured, isPasswordMatching]);
 
   // REQUETE DE CONNEXION
-  const login = async () => {
+  const login = async (event) => {
+    event.preventDefault();
     // VERIFICATION QUE LOGINURL A ETE RENSEIGNE DANS LES PROPS
     if (!loginUrl) {
       setErrorMessage(
@@ -78,11 +84,13 @@ const ConnexionModal = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
         body: JSON.stringify({ userId: user, password: password }),
       });
       // SI LA REPONSE EST OK
-      if (response.ok) {
+      if (window && response.ok) {
         const data = await response.json();
         localStorage.setItem(`${securityItem}_userId`, data.userId);
         localStorage.setItem(`${securityItem}_token`, data.token);
         setUserId(data.userId);
+        setUser("");
+        setPassword("");
         // SI LA REPONSE RENVOI UNE ERREUR
       } else if (response.status === 400) {
         throw new Error("identifiant ou mot de passe inconnu");
@@ -97,7 +105,8 @@ const ConnexionModal = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
   };
 
   // REQUETE D'INSCRIPTION
-  const signup = async () => {
+  const signup = async (event) => {
+    event.preventDefault();
     // VERIFICATION QUE SIGNUPURL A ETE RENSEIGNE DANS LES PROPS
     if (!signupUrl) {
       setErrorMessage(
@@ -119,11 +128,15 @@ const ConnexionModal = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
         }),
       });
       // Si LA REPONSE EST OK
-      if (response.ok) {
+      if (window && response.ok) {
         const data = await response.json();
         localStorage.setItem(`${securityItem}_userId`, data.userId);
         localStorage.setItem(`${securityItem}_token`, data.token);
         setUserId(data.userId);
+        setMail("");
+        setUser("");
+        setNewPassword("");
+        setNewPasswordVerif("");
         // SI LA REPONSE RENVOI UNE ERREUR
       } else if (response.status === 400) {
         throw new Error("La requète a échoué.");
@@ -148,7 +161,7 @@ const ConnexionModal = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
 
   // RENDER
   return (
-    <Modal>
+    <div id="UserPanel">
       {/*SI L'UTILISATEUR EST CONNECTE*/}
       {isConnected && (
         <div>
@@ -158,7 +171,7 @@ const ConnexionModal = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
       )}
       {/*SI L'UTILISATEUR N'EST PAS CONNECTE*/}
       {!isConnected && !wantToCreateUser && (
-        <form>
+        <form onSubmit={(event) => login(event)}>
           <h2>Vous souhaitez vous connecter ?</h2>
           <label htmlFor="userInput">Renseignez votre identifiant :</label>
           <input
@@ -174,10 +187,11 @@ const ConnexionModal = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
             required
             type="password"
             id="passwordInput"
-            placeholder="votre mode de passe"
+            placeholder="votre mot de passe"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />
+          {errorMessage && <p id="error">{errorMessage}</p>}
           <button type="submit">connection</button>
           {allowSignUp && (
             <>
@@ -191,7 +205,7 @@ const ConnexionModal = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
       )}
       {/*SI L'UTILISATEUR N'EST PAS CONNECTE ET VEUT CREER UN COMPTE*/}
       {allowSignUp && !isConnected && wantToCreateUser && (
-        <form>
+        <form onSubmit={(event) => signup(event)}>
           <h2>Vous souhaitez créer un compte</h2>
           <button onClick={() => setWantToCreateuser(false)}>
             revenir à la page de connection
@@ -202,6 +216,7 @@ const ConnexionModal = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
           <input
             type="email"
             id="mailInput"
+            placeholder="votre email"
             value={mail}
             onChange={(event) => setMail(event.target.value)}
           />
@@ -221,7 +236,7 @@ const ConnexionModal = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
             required
             type="password"
             id="passwordInput"
-            placeholder="votre mode de passe"
+            placeholder="votre mot de passe"
             value={newPassword}
             onChange={(event) => setNewPassword(event.target.value)}
           />
@@ -252,8 +267,8 @@ const ConnexionModal = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
           )}
         </form>
       )}
-    </Modal>
+    </div>
   );
 };
 
-export default ConnexionModal;
+export default UserPanel;

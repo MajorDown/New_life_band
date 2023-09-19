@@ -1,7 +1,7 @@
 /*GLOBALS*/
 :root {
   --colorBack: rgb(23, 35, 36);
-  --colorFont: rgb(225, 225, 225);
+  --colorFont: rgb(220, 230, 236);
   --colorShadow: rgb(126, 126, 126);
   --colorStar: rgb(173, 104, 0);
   --colorIcon: rgb(0, 96, 102);
@@ -20,7 +20,6 @@
   font-family: var(--fontNormal);
   font-size: var(--sizeText);
   color: var(--colorFont);
-  color: rgba(0, 0, 0, 0.426);
 }
 
 

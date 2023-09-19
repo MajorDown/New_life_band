@@ -282,6 +282,51 @@ a.leaflet-popup-close-button span {
     object-fit: cover;
 }
 
+/**********USERPANEL**************************/
+
+#UserPanel {
+    padding: 20px;
+}
+
+#UserPanel div,
+#UserPanel form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#UserPanel input {
+    background-color: var(--colorFont);
+    color: var(--colorBack);
+    padding: 10px;
+    border-radius: var(--radius);
+    font-weight: 700;
+    width: 60%;
+    text-align: center;
+}
+
+::placeholder {
+    color: var(--colorShadow);
+    text-align: center;
+    font-weight: 700;
+}
+
+#UserPanel button {
+    background-color: var(--colorShadow);
+    color: var(--colorFont);
+    padding: 10px;
+    border-radius: var(--radius);
+    transition: 0.3s;
+}
+
+#UserPanel button:hover {
+    background-color: var(--colorStar);
+    transition: 0.3s;
+}
+
+
 /**********FOOTER*****************************/
 
 footer {
