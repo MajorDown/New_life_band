@@ -1,12 +1,12 @@
 import React from "react";
-import UserPanel from "@/components/userPanel";
+import UserPanel from "@/components/UserPanel";
 
 const News = () => {
   return (
     <section>
       <UserPanel
         allowSignUp={true}
-        securityItem={"major"}
+        securityItem={"newlife"}
         loginUrl={"http://romainfouillarondev.fr"}
         signupUrl={"http://romainfouillarondev.fr"}
       />

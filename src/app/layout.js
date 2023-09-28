@@ -3,11 +3,37 @@ import "@/styles/globals.css";
 import webSiteData from "@/majorDB/webSite/website.DB.json";
 import Header from "@/components/Header.js";
 import Footer from "@/components/Footer.js";
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
+import UserAccess from "@/components/UserAccess";
 
+export const UserContext = createContext();
 export const WebSiteContext = createContext();
 
 export default function RootLayout({ children }) {
+  const [userId, setUserId] = useState("");
+
+  // INITIALISATION DU USERID COTE CLIENT
+  useEffect(() => {
+    if (window) {
+      setUserId(localStorage.getItem(`newlife_userId`) || null);
+    }
+  }, []);
+
+  // ÉCOUTE DES CHANGEMENTS DE LA VALEUR DE USERID DANS LOCALSTORAGE
+  useEffect(() => {
+    const handleStorageChange = (event) => {
+      if (event.key === "newlife_userId") {
+        setUserId(event.newValue || null);
+      }
+    };
+    window.addEventListener("storage", (event) => handleStorageChange(event));
+    return () => {
+      window.removeEventListener("storage", (event) =>
+        handleStorageChange(event)
+      );
+    };
+  }, []);
+
   return (
     <html lang="fr">
       <head>
@@ -28,11 +54,14 @@ export default function RootLayout({ children }) {
         ></link>
       </head>
       <body>
-        <WebSiteContext.Provider value={webSiteData}>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </WebSiteContext.Provider>
+        <UserContext.Provider value={userId}>
+          <WebSiteContext.Provider value={webSiteData}>
+            <UserAccess />
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </WebSiteContext.Provider>
+        </UserContext.Provider>
       </body>
     </html>
   );

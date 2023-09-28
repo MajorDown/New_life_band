@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Modal = ({ children }) => {
+const Modal = ({ children, onClick }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleCloseModal = (event) => {
@@ -9,6 +9,7 @@ const Modal = ({ children }) => {
       event.target.id === "modalCloseBtn"
     ) {
       setIsOpen(false);
+      onClick();
     }
   };
 
@@ -27,7 +28,7 @@ const Modal = ({ children }) => {
 
   const overLayStyle = {
     display: isOpen ? "flex" : "none",
-    backgroundColor: "rgba(0, 0, 0, 0.426)",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
     position: "absolute",
     top: 0,
     left: 0,
@@ -35,6 +36,7 @@ const Modal = ({ children }) => {
     height: "100vh",
     justifyContent: "center",
     alignItems: "center",
+    zIndex: 5,
   };
 
   const windowStyle = {
@@ -43,13 +45,18 @@ const Modal = ({ children }) => {
     borderRadius: "5px",
     position: "relative",
     maxWidth: "60%",
+    zIndex: 6,
   };
 
   const closeBtnStyle = {
+    padding: "5px",
+    borderRadius: "5px",
     color: "var(--colorBack)",
     position: "absolute",
     top: "10px",
     right: "10px",
+    zIndex: 7,
+    cursor: "pointer",
   };
 
   return (

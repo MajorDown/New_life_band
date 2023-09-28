@@ -5,6 +5,7 @@ body {
     align-items: center;
     animation: siteOpening 2s;
     background-color: var(--colorBack);
+    overflow-x: hidden;
 }
 
 header,
@@ -12,6 +13,83 @@ main,
 footer {
     width: 98%;
     max-width: 1440px;
+}
+
+/**********USERACCESS***********************/
+
+#userAccess {
+    position: absolute;
+    top: 150px;
+    right: 5px;
+    width: 50px;
+    height: 40px;
+}
+
+#userAccess:hover {
+    cursor: pointer;
+}
+
+#userAccess button {
+    background-color: #00000000;
+    border: none;
+    position: absolute;
+    right: -50px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#userAccess:hover button {
+    right: 0px;
+    transition: 0.3s;
+}
+
+#userAccess svg {
+    width: 36px;
+    height: 36px;
+}
+
+/**********USERPANEL**************************/
+
+#UserPanel {
+    padding: 20px;
+}
+
+#UserPanel div,
+#UserPanel form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#UserPanel input {
+    background-color: var(--colorFont);
+    color: var(--colorBack);
+    padding: 10px;
+    border-radius: var(--radius);
+    font-weight: 700;
+    width: 60%;
+    text-align: center;
+}
+
+::placeholder {
+    color: var(--colorShadow);
+    text-align: center;
+    font-weight: 700;
+}
+
+#UserPanel button {
+    background-color: var(--colorShadow);
+    color: var(--colorFont);
+    padding: 10px;
+    border-radius: var(--radius);
+    transition: 0.3s;
+}
+
+#UserPanel button:hover {
+    background-color: var(--colorStar);
+    transition: 0.3s;
 }
 
 /**********HEADER****************************/
@@ -281,51 +359,6 @@ a.leaflet-popup-close-button span {
     position: relative;
     object-fit: cover;
 }
-
-/**********USERPANEL**************************/
-
-#UserPanel {
-    padding: 20px;
-}
-
-#UserPanel div,
-#UserPanel form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-#UserPanel input {
-    background-color: var(--colorFont);
-    color: var(--colorBack);
-    padding: 10px;
-    border-radius: var(--radius);
-    font-weight: 700;
-    width: 60%;
-    text-align: center;
-}
-
-::placeholder {
-    color: var(--colorShadow);
-    text-align: center;
-    font-weight: 700;
-}
-
-#UserPanel button {
-    background-color: var(--colorShadow);
-    color: var(--colorFont);
-    padding: 10px;
-    border-radius: var(--radius);
-    transition: 0.3s;
-}
-
-#UserPanel button:hover {
-    background-color: var(--colorStar);
-    transition: 0.3s;
-}
-
 
 /**********FOOTER*****************************/
 
