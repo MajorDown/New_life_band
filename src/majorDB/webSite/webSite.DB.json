@@ -93,5 +93,24 @@
             "title": "Trajectoire ~ live du 19/08/23",
             "src": "/videos/trajectoire.mp4"
         }
+    ],
+    "news": [
+        {
+            "_id": "12345",
+            "title": "Premier article",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "",
+                    "justify": "center"
+                },
+                {
+                    "type": "text",
+                    "text": "",
+                    "justify": "center"
+                },
+            ],
+            "date": "11.12.2023"
+        }
     ]
 }

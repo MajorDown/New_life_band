@@ -44,13 +44,14 @@ const Modal = ({ children, onClick }) => {
     padding: "5px",
     borderRadius: "5px",
     position: "relative",
-    maxWidth: "60%",
+    maxWidth: "90%",
     zIndex: 6,
   };
 
   const closeBtnStyle = {
     padding: "5px",
     borderRadius: "5px",
+    backgroundColor: "var(--colorFont)",
     color: "var(--colorBack)",
     position: "absolute",
     top: "10px",

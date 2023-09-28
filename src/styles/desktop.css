@@ -19,10 +19,11 @@ footer {
 
 #userAccess {
     position: absolute;
-    top: 150px;
+    top: 140px;
     right: 5px;
     width: 50px;
     height: 40px;
+    z-index: 4;
 }
 
 #userAccess:hover {

@@ -10,7 +10,7 @@ const UserAccess = () => {
   return (
     <>
       <div id="userAccess" onClick={() => setWantUserPanel(!wantUserPanel)}>
-        <button>
+        <button aria-label="userAccess">
           {user && <p>user: {user}</p>}
           <svg width="218" height="287" viewBox="0 0 218 287">
             <rect width="218" height="287" fill="#00000000" />
