@@ -1,17 +1,18 @@
 import { UserContext } from "@/app/layout";
-import { useContext, useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import UserPanel from "./UserPanel";
+import useLocalStorage from "@/hooks/useLocalStorage";
 
 const UserAccess = () => {
-  const user = useContext(UserContext);
+  const userId = useLocalStorage("newlife_userId");
   const [wantUserPanel, setWantUserPanel] = useState(false);
 
   return (
     <>
       <div id="userAccess" onClick={() => setWantUserPanel(!wantUserPanel)}>
         <button aria-label="userAccess">
-          {user && <p>user: {user}</p>}
+          {userId && <p>user: {userId}</p>}
           <svg width="218" height="287" viewBox="0 0 218 287">
             <rect width="218" height="287" fill="#00000000" />
             <circle cx="106" cy="75" r="75" fill="#9D773E" />

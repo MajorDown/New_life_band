@@ -98,6 +98,7 @@
         {
             "_id": "12345",
             "title": "Premier article",
+            "date": "11.12.2023",
             "content": [
                 {
                     "type": "text",
@@ -105,12 +106,27 @@
                     "justify": "center"
                 },
                 {
+                    "type": "image",
+                    "src": "",
+                    "alt": "center"
+                }
+            ]
+        },
+        {
+            "_id": "23456",
+            "title": "Second article",
+            "date": "25.12.2023",
+            "content": [
+                {
                     "type": "text",
                     "text": "",
-                    "justify": "center"
+                    "justify": ""
                 },
-            ],
-            "date": "11.12.2023"
+                {
+                    "type": "video",
+                    "src": ""
+                }
+            ]
         }
     ]
 }

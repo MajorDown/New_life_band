@@ -5,9 +5,6 @@ const BlogArticle = ({ article }) => {
   const user = useContext(UserContext);
   const [wantBlogPanel, setWantBlogPanel] = useState(false);
 
-  const openBlogPanel = () => {
-    setWantBlogPanel(!wantBlogPanel);
-  };
   return (
     <article>
       <h3>{article.title}</h3>
@@ -23,7 +20,7 @@ const BlogArticle = ({ article }) => {
       {article.type === "video" && <BlogVideo src={node.src} />}
       <div>
         {user && (
-          <button onClick={() => openBlogPanel(article._id)}>
+          <button onClick={() => setWantBlogPanel(true)}>
             modifier l'article
           </button>
         )}

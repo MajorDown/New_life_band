@@ -154,8 +154,8 @@ const UserPanel = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
 
   // REQUETE DE DECONNEXION
   const logout = () => {
-    localStorage.removeItem("major_userId");
-    localStorage.removeItem("major_token");
+    localStorage.removeItem(`${securityItem}_userId`);
+    localStorage.removeItem(`{securityItem}_token`);
     setUserId(null);
   };
 
