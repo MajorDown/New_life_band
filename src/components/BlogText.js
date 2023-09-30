@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-const blogText = ({ justify, content }) => {
+const blogText = ({ justify, text }) => {
   const [textStyle, setTextStyle] = useState({});
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const blogText = ({ justify, content }) => {
 
   return (
     <p style={textStyle} className="blogText">
-      {content}
+      {text}
     </p>
   );
 };

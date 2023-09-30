@@ -327,6 +327,21 @@ a.leaflet-popup-close-button span {
     width: 100%;
 }
 
+/**********NEWS*******************************/
+
+.blogArticle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    width: 95%;
+    border-left: solid 3px var(--colorShadow);
+    border-right: solid 3px var(--colorShadow);
+    border-bottom: solid 3px var(--colorShadow);
+    border-radius: var(--radius);
+}
+
 /**********ACCUEIL****************************/
 
 #accueil {

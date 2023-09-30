@@ -1,30 +1,44 @@
-import React, { useContext } from "react";
-import { UserContext } from "@/app/layout";
+import React from "react";
+import BlogText from "./BlogText";
+import BlogImage from "./BlogImage";
+import BlogVideo from "./BlogVideo";
+import { useUserContext } from "@/contexts/UserContext";
 
-const BlogArticle = ({ article }) => {
-  const user = useContext(UserContext);
-  const [wantBlogPanel, setWantBlogPanel] = useState(false);
+const BlogArticle = ({ article, editMode = false }) => {
+  const { userId, updateUserId } = useUserContext();
 
   return (
-    <article>
-      <h3>{article.title}</h3>
-      {article.type === "text" && (
-        <BlogText
-          justify={article.content.justify}
-          text={article.content.text}
-        />
-      )}
-      {article.type === "image" && (
-        <BlogImage src={article.content.src} alt={article.content.alt} />
-      )}
-      {article.type === "video" && <BlogVideo src={node.src} />}
-      <div>
-        {user && (
-          <button onClick={() => setWantBlogPanel(true)}>
-            modifier l'article
-          </button>
+    <article className="blogArticle">
+      <h3>
+        {editMode ? (
+          <input type="text" aria-label="articleTitle" />
+        ) : (
+          article.title
         )}
-        <p className="blogDate">{date}</p>
+      </h3>
+      {article.content.map((node) => {
+        switch (node.type) {
+          case "text":
+            return (
+              <BlogText
+                editMode={editMode}
+                text={node.text}
+                justify={node.justify}
+              />
+            );
+          case "image":
+            return (
+              <BlogImage editMode={editMode} src={node.src} alt={node.alt} />
+            );
+          case "video":
+            return <BlogVideo editMode={editMode} src={node.src} />;
+          default:
+            return null;
+        }
+      })}
+      <div>
+        {userId && <button>modifier l'article</button>}
+        <p className="blogDate">{article.date}</p>
       </div>
     </article>
   );

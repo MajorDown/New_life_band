@@ -1,15 +1,16 @@
+"use client";
 import React from "react";
-import UserPanel from "@/components/UserPanel";
+import { useSiteDataContext } from "@/contexts/SiteDataContext";
+import BlogArticle from "@/components/BlogArticle";
 
 const News = () => {
+  const { siteData, updateSiteData } = useSiteDataContext();
   return (
     <section>
-      <UserPanel
-        allowSignUp={true}
-        securityItem={"newlife"}
-        loginUrl={"http://romainfouillarondev.fr"}
-        signupUrl={"http://romainfouillarondev.fr"}
-      />
+      <h2>Les actu' du groupe</h2>
+      {siteData.news.map((article) => (
+        <BlogArticle article={article} />
+      ))}
     </section>
   );
 };
