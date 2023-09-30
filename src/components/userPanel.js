@@ -1,8 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useUserContext } from "@/contexts/UserContext";
 
 const UserPanel = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
-  const [userId, setUserId] = useState(null);
+  const { userId, updateUserId } = useUserContext();
   const [isConnected, setIsConnected] = useState(false);
   const [wantToCreateUser, setWantToCreateuser] = useState(false);
   const [user, setUser] = useState("");
@@ -14,13 +15,6 @@ const UserPanel = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
   const [isPasswordSecured, setIsPasswordSecured] = useState(false);
   const [isPasswordMatching, setIsPasswordMatching] = useState(false);
   const [isFormCompleted, setIsFormCompleted] = useState(false);
-
-  // INITIALISATION DU USERID COTE CLIENT
-  useEffect(() => {
-    if (window) {
-      setUserId(localStorage.getItem(`${securityItem}_userId`) || null);
-    }
-  }, [securityItem]);
 
   // VERIFICATION DE LA PRESENCE D'UN USERID
   useEffect(() => {
@@ -88,7 +82,7 @@ const UserPanel = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
         const data = await response.json();
         localStorage.setItem(`${securityItem}_userId`, data.userId);
         localStorage.setItem(`${securityItem}_token`, data.token);
-        setUserId(data.userId);
+        updateUserId(data.userId);
         setUser("");
         setPassword("");
         // SI LA REPONSE RENVOI UNE ERREUR
@@ -132,7 +126,7 @@ const UserPanel = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
         const data = await response.json();
         localStorage.setItem(`${securityItem}_userId`, data.userId);
         localStorage.setItem(`${securityItem}_token`, data.token);
-        setUserId(data.userId);
+        updateUserId(data.userId);
         setMail("");
         setUser("");
         setNewPassword("");
@@ -156,7 +150,7 @@ const UserPanel = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
   const logout = () => {
     localStorage.removeItem(`${securityItem}_userId`);
     localStorage.removeItem(`{securityItem}_token`);
-    setUserId(null);
+    updateUserId(null);
   };
 
   // RENDER

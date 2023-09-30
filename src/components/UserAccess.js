@@ -2,10 +2,10 @@ import { UserContext } from "@/app/layout";
 import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import UserPanel from "./UserPanel";
-import useLocalStorage from "@/hooks/useLocalStorage";
+import { useUserContext } from "@/contexts/UserContext";
 
 const UserAccess = () => {
-  const userId = useLocalStorage("newlife_userId");
+  const { userId, updateuserId } = useUserContext();
   const [wantUserPanel, setWantUserPanel] = useState(false);
 
   return (

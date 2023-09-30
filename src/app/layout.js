@@ -1,18 +1,12 @@
 "use client";
 import "@/styles/globals.css";
-import webSiteData from "@/majorDB/webSite/website.DB.json";
 import Header from "@/components/Header.js";
 import Footer from "@/components/Footer.js";
-import { createContext } from "react";
 import UserAccess from "@/components/UserAccess";
-import useLocalStorage from "@/hooks/useLocalStorage";
-
-export const UserContext = createContext();
-export const WebSiteContext = createContext();
+import { UserProvider } from "@/contexts/UserContext";
+import { SiteDataProvider } from "@/contexts/SiteDataContext";
 
 export default function RootLayout({ children }) {
-  const userId = useLocalStorage("newlife_userId");
-
   return (
     <html lang="fr">
       <head>
@@ -33,14 +27,14 @@ export default function RootLayout({ children }) {
         ></link>
       </head>
       <body>
-        <UserContext.Provider value={userId}>
-          <WebSiteContext.Provider value={webSiteData}>
+        <UserProvider>
+          <SiteDataProvider>
             <UserAccess />
             <Header />
             <main>{children}</main>
             <Footer />
-          </WebSiteContext.Provider>
-        </UserContext.Provider>
+          </SiteDataProvider>
+        </UserProvider>
       </body>
     </html>
   );

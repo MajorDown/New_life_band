@@ -1,13 +1,13 @@
 "use client";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { WebSiteContext } from "../layout";
-import cities from "@/majorDB/city/city.DB.json";
+import cities from "@/data/cities.json";
 import DateArticle from "@/components/DateArticle";
+import { useSiteDataContext } from "@/contexts/SiteDataContext";
 
 const Dates = () => {
-  let SiteData = useContext(WebSiteContext);
+  const { siteData, updateSiteData } = useSiteDataContext();
   const [mapKey, setMapKey] = useState(Date.now());
   const [markers, setMarkers] = useState([]);
   const [wantMap, setWantMap] = useState(false);
@@ -58,10 +58,10 @@ const Dates = () => {
   return (
     <section id="dateSection">
       <h2>Prochains Concerts</h2>
-      {SiteData.dates.map((date, index) => (
+      {siteData.dates.map((date, index) => (
         <DateArticle key={index} date={date} />
       ))}
-      {SiteData.dates[0] && (
+      {siteData.dates[0] && (
         <button id="mapToggler" onClick={() => setWantMap(!wantMap)}>
           {wantMap
             ? "ne plus afficher la carte"

@@ -1,12 +1,12 @@
 "use client";
-import React, { useContext } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { WebSiteContext } from "@/app/layout";
+import { useSiteDataContext } from "@/contexts/SiteDataContext";
 
 const Header = () => {
-  const SiteData = useContext(WebSiteContext);
+  const { siteData, updateSiteData } = useSiteDataContext();
   const pathname = usePathname();
 
   return (
@@ -14,18 +14,18 @@ const Header = () => {
       <div id="headerTitle">
         <Link href="/">
           <Image
-            src={SiteData.header.logo_src}
-            alt={SiteData.header.logo_alt}
+            src={siteData.header.logo_src}
+            alt={siteData.header.logo_alt}
             width={298}
             height={185}
           />
         </Link>
-        <h1>{SiteData.header.title}</h1>
+        <h1>{siteData.header.title}</h1>
       </div>
       <nav>
         <ul>
-          {SiteData.header.navbar &&
-            SiteData.header.navbar.map((navLink, index) => (
+          {siteData.header.navbar &&
+            siteData.header.navbar.map((navLink, index) => (
               <li key={index} id={`linkTo${navLink.text}`}>
                 <Link
                   href={navLink.href}
