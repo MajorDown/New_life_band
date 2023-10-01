@@ -38,7 +38,7 @@ const BlogArticle = ({ article, editMode = false }) => {
       })}
       <div>
         {userId && <button>modifier l'article</button>}
-        <p className="blogDate">{article.date}</p>
+        <p className="blogDate">posté le {article.date}</p>
       </div>
     </article>
   );

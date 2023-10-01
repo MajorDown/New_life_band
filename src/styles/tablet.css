@@ -46,8 +46,13 @@ h2 {
 
 @media screen and (max-width: 560px) {
 
-    #userAccess {
-        top: 80px;
+    #userAccess div {
+        height: 20px;
+    }
+
+    #userAccess svg {
+        width: 20px;
+        height: 20px;
     }
 
     #modalWindow {
@@ -61,6 +66,26 @@ h2 {
     #headerTitle img {
         width: 20vw;
         height: 12.4vw;
+    }
+
+    #linkToBio {
+        top: 5px;
+        left: 3%;
+    }
+
+    #linkToDates {
+        top: 50px;
+        left: 20%;
+    }
+
+    #linkToMedias {
+        top: 50px;
+        right: 20%;
+    }
+
+    #linkToNews {
+        top: 5px;
+        right: 2%;
     }
 
 }

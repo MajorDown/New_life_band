@@ -18,35 +18,49 @@ footer {
 /**********USERACCESS***********************/
 
 #userAccess {
-    position: absolute;
-    top: 140px;
-    right: 5px;
-    width: 50px;
-    height: 40px;
-    z-index: 4;
+    position: relative;
+    width: 100%;
+    height: 30px;
 }
 
-#userAccess:hover {
-    cursor: pointer;
+#userAccess div {
+    background-color: black;
+    width: 100%;
+    position: absolute;
+    top: -50px;
+    transition: 0.3s;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+#userAccess:hover div {
+    top: 0px;
+    transition: 0.3s;
 }
 
 #userAccess button {
-    background-color: #00000000;
-    border: none;
-    position: absolute;
-    right: -50px;
-    transition: 0.3s;
-    cursor: pointer;
+    border-radius: 10px;
 }
 
-#userAccess:hover button {
-    right: 0px;
+#linkToDashboard {
+    font-size: var(sizeText);
+    text-decoration: none;
+    font-family: var(--fontTitle);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+#linkToDashboard:hover {
+    cursor: pointer;
     transition: 0.3s;
 }
 
 #userAccess svg {
     width: 36px;
     height: 36px;
+    cursor: pointer;
 }
 
 /**********USERPANEL**************************/
@@ -96,7 +110,7 @@ footer {
 /**********HEADER****************************/
 
 header {
-    height: 275px;
+    height: 270px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -116,7 +130,7 @@ nav li {
     list-style: none;
 }
 
-a {
+header a {
     font-family: var(--fontTitle);
     font-weight: 600;
     text-decoration: none;
@@ -130,7 +144,7 @@ a:hover {
 }
 
 #linkToBio {
-    top: 35px;
+    top: 15px;
     left: 3%;
 }
 
@@ -145,7 +159,7 @@ a:hover {
 }
 
 #linkToNews {
-    top: 35px;
+    top: 15px;
     right: 2%;
 }
 
@@ -335,7 +349,7 @@ a.leaflet-popup-close-button span {
     align-items: center;
     gap: 10px;
     margin: 10px;
-    width: 95%;
+    width: 90%;
     border-left: solid 3px var(--colorShadow);
     border-right: solid 3px var(--colorShadow);
     border-bottom: solid 3px var(--colorShadow);
@@ -401,7 +415,7 @@ footer p {
         height: 111px;
     }
 
-    a {
+    header a {
         font-size: 3vw;
     }
 }

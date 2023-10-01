@@ -8,8 +8,8 @@ const News = () => {
   return (
     <section>
       <h2>Les actu' du groupe</h2>
-      {siteData.news.map((article) => (
-        <BlogArticle article={article} />
+      {siteData.news.map((article, index) => (
+        <BlogArticle key={index} article={article} />
       ))}
     </section>
   );
