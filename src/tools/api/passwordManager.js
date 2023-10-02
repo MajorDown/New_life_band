@@ -10,4 +10,5 @@ const passwordChecker = async (password, hashedpassword) => {
   const isPasswordValid = await bcrypt.compare(password, hashedpassword);
   return isPasswordValid;
 };
+
 module.exports = { passwordCrypter, passwordChecker };
