@@ -16,11 +16,12 @@ const BlogArticle = ({ article, editMode = false }) => {
           article.title
         )}
       </h3>
-      {article.content.map((node) => {
+      {article.content.map((node, index) => {
         switch (node.type) {
           case "text":
             return (
               <BlogText
+                key={index}
                 editMode={editMode}
                 text={node.text}
                 justify={node.justify}
@@ -28,10 +29,15 @@ const BlogArticle = ({ article, editMode = false }) => {
             );
           case "image":
             return (
-              <BlogImage editMode={editMode} src={node.src} alt={node.alt} />
+              <BlogImage
+                key={index}
+                editMode={editMode}
+                src={node.src}
+                alt={node.alt}
+              />
             );
           case "video":
-            return <BlogVideo editMode={editMode} src={node.src} />;
+            return <BlogVideo key={index} editMode={editMode} src={node.src} />;
           default:
             return null;
         }

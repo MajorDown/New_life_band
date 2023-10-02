@@ -14,7 +14,6 @@ const UserPanel = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [isPasswordSecured, setIsPasswordSecured] = useState(false);
   const [isPasswordMatching, setIsPasswordMatching] = useState(false);
-  const [isFormCompleted, setIsFormCompleted] = useState(false);
 
   // VERIFICATION DE LA PRESENCE D'UN USERID
   useEffect(() => {
@@ -50,13 +49,6 @@ const UserPanel = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
       setIsPasswordMatching(true);
     }
   }, [wantToCreateUser, newPassword, newPasswordVerif]);
-
-  // VERIFICATION QUE LE FORMULAIRE D'INSCRIPTION EST EN ORDRE
-  useEffect(() => {
-    if (mail && isPasswordSecured && isPasswordMatching)
-      setIsFormCompleted(true);
-    else setIsFormCompleted(false);
-  }, [mail, isPasswordSecured, isPasswordMatching]);
 
   // REQUETE DE CONNEXION
   const login = async (event) => {
@@ -246,19 +238,19 @@ const UserPanel = ({ allowSignUp, securityItem, loginUrl, signupUrl }) => {
             onChange={(event) => setNewPasswordVerif(event.target.value)}
           />
           {errorMessage && <p id="error">{errorMessage}</p>}
-          {isFormCompleted ? (
-            <>
-              <button type="submit">s'inscrire</button>
-              <p>
-                en cliquant sur s'inscrire, vous acceptez la charte
-                d'utilisation du site
-              </p>
-            </>
-          ) : (
-            <button type="submit" disabled>
-              s'inscrire
-            </button>
-          )}
+          {mail &&
+            user &&
+            newPasswordVerif &&
+            isPasswordSecured &&
+            isPasswordMatching && (
+              <>
+                <button type="submit">s'inscrire</button>
+                <p>
+                  en cliquant sur s'inscrire, vous acceptez la charte
+                  d'utilisation du site
+                </p>
+              </>
+            )}
         </form>
       )}
     </div>
