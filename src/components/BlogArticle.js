@@ -1,50 +1,25 @@
 import React from "react";
-import BlogText from "./BlogText";
-import BlogImage from "./BlogImage";
-import BlogVideo from "./BlogVideo";
-import { useUserContext } from "@/contexts/UserContext";
+import BlogArticleNode from "./BlogArticleNode";
+import supprimer from "@/icons/supprimer.svg";
 
-const BlogArticle = ({ article, editMode = false }) => {
-  const { userId, updateUserId } = useUserContext();
-
+const BlogArticle = ({ article, isConnected = false }) => {
   return (
     <article className="blogArticle">
       <h3>
-        {editMode ? (
+        {isConnected ? (
           <input type="text" aria-label="articleTitle" />
         ) : (
           article.title
         )}
       </h3>
-      {article.content.map((node, index) => {
-        switch (node.type) {
-          case "text":
-            return (
-              <BlogText
-                key={index}
-                editMode={editMode}
-                text={node.text}
-                justify={node.justify}
-              />
-            );
-          case "image":
-            return (
-              <BlogImage
-                key={index}
-                editMode={editMode}
-                src={node.src}
-                alt={node.alt}
-              />
-            );
-          case "video":
-            return <BlogVideo key={index} editMode={editMode} src={node.src} />;
-          default:
-            return null;
-        }
-      })}
+      {article.content.map((node, index) => (
+        <BlogArticleNode key={index} node={node} isConnected={isConnected} />
+      ))}
       <div>
-        {userId && <button>modifier l'article</button>}
-        <p className="blogDate">posté le {article.date}</p>
+        <p className="blogDate">
+          posté le {article.date} par {article.poster}
+        </p>
+        {isConnected && <button>{supprimer}</button>}
       </div>
     </article>
   );

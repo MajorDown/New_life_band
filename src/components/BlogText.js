@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-const blogText = ({ justify, text }) => {
+const blogText = ({ node, editMode }) => {
   const [textStyle, setTextStyle] = useState({});
 
   useEffect(() => {
-    switch (justify) {
+    switch (node.justify) {
       case "left":
         setTextStyle({ textAlign: "start" });
         break;
@@ -21,9 +21,18 @@ const blogText = ({ justify, text }) => {
   }, []);
 
   return (
-    <p style={textStyle} className="blogText">
-      {text}
-    </p>
+    <>
+      {editMode && (
+        <input type="text" placeholder={node.src} className="blogTextInput">
+          {node.src}
+        </input>
+      )}
+      {!editMode && (
+        <p className="blogText" style={textStyle}>
+          {node.src}
+        </p>
+      )}
+    </>
   );
 };
 

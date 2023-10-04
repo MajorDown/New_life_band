@@ -356,6 +356,19 @@ a.leaflet-popup-close-button span {
     border-radius: var(--radius);
 }
 
+.blogArticle button {
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+}
+
+.blogArticle button:hover {
+    cursor: pointer;
+}
+
+.blogArticle svg:hover {
+    cursor: pointer;
+}
+
 /**********ACCUEIL****************************/
 
 #accueil {
