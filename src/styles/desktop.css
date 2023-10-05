@@ -369,6 +369,19 @@ a.leaflet-popup-close-button span {
     cursor: pointer;
 }
 
+.blogArticleTitle,
+.blogArticleNode,
+.blogArticleFooter {
+    display: flex;
+    gap: 20px;
+}
+
+.blogArticleNodeSetter {
+    display: flex;
+    gap: 10px;
+}
+
+
 /**********ACCUEIL****************************/
 
 #accueil {

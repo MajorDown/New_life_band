@@ -24,12 +24,12 @@ const blogText = ({ node, editMode }) => {
     <>
       {editMode && (
         <input type="text" placeholder={node.src} className="blogTextInput">
-          {node.src}
+          {node.text}
         </input>
       )}
       {!editMode && (
         <p className="blogText" style={textStyle}>
-          {node.src}
+          {node.text}
         </p>
       )}
     </>

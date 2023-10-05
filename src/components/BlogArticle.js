@@ -1,25 +1,27 @@
 import React from "react";
+import Image from "next/image";
+import BlogArticleTitle from "./BlogArticleTitle";
 import BlogArticleNode from "./BlogArticleNode";
+
 import supprimer from "@/icons/supprimer.svg";
+import modifier from "@/icons/modifier.svg";
 
 const BlogArticle = ({ article, isConnected = false }) => {
   return (
     <article className="blogArticle">
-      <h3>
-        {isConnected ? (
-          <input type="text" aria-label="articleTitle" />
-        ) : (
-          article.title
-        )}
-      </h3>
+      <BlogArticleTitle articleName={article.title} isConnected={isConnected} />
       {article.content.map((node, index) => (
         <BlogArticleNode key={index} node={node} isConnected={isConnected} />
       ))}
-      <div>
+      <div className="blogArticleFooter">
         <p className="blogDate">
           posté le {article.date} par {article.poster}
         </p>
-        {isConnected && <button>{supprimer}</button>}
+        {isConnected && (
+          <button>
+            <Image src={supprimer} width={20} height={20} />
+          </button>
+        )}
       </div>
     </article>
   );

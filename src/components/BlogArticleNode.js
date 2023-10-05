@@ -15,7 +15,7 @@ const BlogArticleNode = ({ node, isConnected }) => {
       {node.type === "image" && <BlogImage node={node} editMode={editMode} />}
       {node.type === "video" && <BlogVideo node={node} editMode={editMode} />}
       {isConnected && (
-        <div>
+        <div className="blogArticleNodeSetter">
           <button onClick={() => setEditMode(true)}>
             <Image src={modifier} width={20} height={20} />
           </button>

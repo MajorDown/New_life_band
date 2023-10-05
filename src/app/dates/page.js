@@ -23,7 +23,7 @@ const Dates = () => {
 
   // Créez une fonction pour traiter les données et générer les marqueurs
   const generateMarkers = () => {
-    const newMarkers = SiteData.dates.map((date) => {
+    const newMarkers = siteData.dates.map((date) => {
       // Convertir le nom de la ville en majuscules
       const cityNameInUpperCase = date.city.toUpperCase();
       console.log(cityNameInUpperCase);

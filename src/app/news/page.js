@@ -14,7 +14,7 @@ const News = () => {
         <BlogArticle
           key={index}
           article={article}
-          isConnected={userId ? true : true}
+          isConnected={userId ? true : false}
         />
       ))}
     </section>
