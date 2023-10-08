@@ -1,5 +1,5 @@
 "use client";
-import react from "react";
+import react, { useState } from "react";
 import BlogPage from "@/components/BlogPage";
 import { useSiteDataContext } from "@/contexts/SiteDataContext";
 import { useUserContext } from "@/contexts/UserContext";
@@ -7,9 +7,11 @@ import { useUserContext } from "@/contexts/UserContext";
 export default function Blog({ params }) {
   const { siteData, updateSiteData } = useSiteDataContext();
   const { userId, updateUserid } = useUserContext();
+  const [article, setArticle] = useState();
+
   return (
     <section className="blog">
-      <BlogPage article isConnected={userId ? true : false} />
+      <BlogPage article={article} isConnected={userId ? true : false} />
     </section>
   );
 }

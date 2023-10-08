@@ -343,12 +343,46 @@ a.leaflet-popup-close-button span {
 
 /**********NEWS*******************************/
 
+#newsSection button {
+    gap: 10px;
+    padding: 10px;
+    border-radius: var(--radius);
+    color: var(--colorFont);
+    background-color: var(--colorShadow);
+    transition: 0.3s;
+}
+
+#newsSection button a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#newsSection button a:hover {
+    color: var(--colorFont);
+    transition: 0.3s;
+}
+
+#newsSection button:hover {
+    cursor: pointer;
+    background-color: var(--colorStar);
+    transition: 0.3s
+}
+
+#newsSection svg:hover {
+    cursor: pointer;
+}
+
 .blogArticle {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
     margin: 10px;
+    padding: 20px;
     width: 90%;
     border-left: solid 3px var(--colorShadow);
     border-right: solid 3px var(--colorShadow);
@@ -356,17 +390,10 @@ a.leaflet-popup-close-button span {
     border-radius: var(--radius);
 }
 
-.blogArticle button {
-    background-color: rgba(255, 0, 0, 0);
-    border: none;
-}
-
-.blogArticle button:hover {
-    cursor: pointer;
-}
-
-.blogArticle svg:hover {
-    cursor: pointer;
+.blogArticle div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .blogArticleTitle,
