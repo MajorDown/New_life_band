@@ -47,12 +47,6 @@ const Header = (props) => {
                 >
                     News
                 </a>
-                <a 
-                    href="/contact" 
-                    class="${props.currentPath === "/contact" ? "active" : ""}"
-                >
-                    Contact
-                </a>
             </nav>
             <div id="headerUnderline"></div>
         </header>
