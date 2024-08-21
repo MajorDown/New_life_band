@@ -8,12 +8,14 @@ const Header = (props) => {
   return /*html*/ `
         <header>
             <div id="headerTitle">
-                <img 
-                    src="/public/images/logo.png" 
-                    alt="logo"
-                    width="298"
-                    height="185"
-                >
+                <a href="/">
+                    <img 
+                        src="/public/images/logo.png" 
+                        alt="logo"
+                        width="298"
+                        height="185"
+                    >
+                </a>
                 <h1>Site Officiel du groupe de blues rock</h1>
             </div>
             <nav>
