@@ -1,24 +1,32 @@
 const http = require("http");
 require("dotenv").config();
-const router = require("./router");
+const Router = require("./router");
 
 const Home = require("./pages/Home");
 const Error404 = require("./pages/Error");
 
-// Déclaration des routes
+// Déclaration des routes (Web et API)
 const routes = {
   "/": Home,
-  "/404": Error404, // Route pour la page d'erreur 404
-  // Ajoute d'autres routes ici
+  "/404": Error404,
 };
 
-// Créer le serveur
+// Configuration des options pour le routeur
+const options = {
+  apiPrefixes: ["/api"],
+  staticFolders: ["/public"],
+};
+
+// Création d'une instance de Router avec les options
+const router = new Router(routes, options);
+
+// Création du serveur
 const server = http.createServer((req, res) => {
-  router(req, res, routes);
+  router.start(req, res);
 });
 
-// Lancer le serveur
-const port = process.env.PORT || 3000;
+// Lancement du serveur
+const port = process.env.PORT;
 server.listen(port, () => {
   console.log(`Serveur lancé sur le port : ${port}`);
 });
