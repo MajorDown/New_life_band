@@ -21,7 +21,7 @@ const Header = (props) => {
             <nav>
                 <a 
                     id="linkToMedia" 
-                    href="/" 
+                    href="/media" 
                     class="${props.currentPath === "/" ? "active" : ""}"
                 >
                     Media

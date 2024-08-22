@@ -2,7 +2,7 @@ const Head = require("../components/Head");
 const Header = require("../components/Header");
 const Footer = require("../components/Footer");
 
-const Error = (props) => {
+const Error404 = (props) => {
   const { url } = props;
 
   return /*html*/ `
@@ -21,4 +21,4 @@ const Error = (props) => {
     `;
 };
 
-module.exports = Error;
+module.exports = Error404;

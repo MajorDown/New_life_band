@@ -3,12 +3,12 @@ require("dotenv").config();
 const Router = require("./router");
 
 const Home = require("./pages/Home");
-const Error404 = require("./pages/Error");
+const Error404 = require("./pages/Error404");
 
-// Déclaration des routes (Web et API)
+// Déclaration des routes
 const routes = {
-  "/": Home,
-  "/404": Error404,
+  "/": Home({ url: "/" }),
+  "/error": Error404,
 };
 
 // Configuration des options pour le routeur
