@@ -1,0 +1,13 @@
+:root {
+    --colorBack: rgb(23, 35, 36);
+    --colorFont: rgb(220, 230, 236);
+    --colorShadow: rgb(126, 126, 126);
+    --colorStar: rgb(173, 104, 0);
+    --colorIcon: rgb(0, 96, 102);
+    --fontTitle: 'Orbitron', sans-serif;
+    --fontNormal: 'Montserrat', sans-serif;
+    --sizeTitle: 30px;
+    --sizeSubTitle: 20px;
+    --sizeText: 15px;
+    --radius: 1vw;
+}

@@ -1,0 +1,16 @@
+/* Déclaration de la police Montserrat */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/public/fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Déclaration de la police Orbitron */
+@font-face {
+    font-family: 'Orbitron';
+    src: url('/public/fonts/Orbitron-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    /* SemiBold est souvent considéré comme 600 en poids */
+    font-style: normal;
+}

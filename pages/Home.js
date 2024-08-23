@@ -14,6 +14,14 @@ const Home = (props) => {
                     <p>ceci est la page d'accueil</p>
                 </main>
                 ${Footer()}
+                <script>
+                    window.onload = function() {
+                        if (!sessionStorage.getItem('animationPlayed')) {
+                            document.body.classList.add('animated');
+                            sessionStorage.setItem('animationPlayed', 'true');
+                        }
+                    }
+                </script>
             </body>
         </html>
       `;

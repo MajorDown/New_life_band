@@ -1,0 +1,21 @@
+::-webkit-scrollbar {
+    width: 1.6vw;
+    max-width: 16px;
+    background-color: var(--colorBack);
+}
+
+::-moz-scrollbar {
+    width: 1.6vw;
+    max-width: 16px;
+    background-color: var(--colorBack);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--colorShadow);
+    border-radius: 0.8vw;
+}
+
+::-moz-scrollbar-thumb {
+    background-color: var(--colorShadow);
+    border-radius: 0.8vw;
+}

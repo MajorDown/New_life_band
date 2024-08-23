@@ -1,11 +1,23 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--fontNormal);
+    font-size: var(--sizeText);
+    color: var(--colorFont);
+}
+
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: siteOpening 2s;
     background-color: var(--colorBack);
     overflow-x: hidden;
+}
+
+.animated {
+    animation: siteOpening 2s;
 }
 
 header,
