@@ -1,9 +1,9 @@
-const http = require("http");
-require("dotenv").config();
-const Router = require("./router");
-
-const Home = require("./pages/Home");
-const Error404 = require("./pages/Error404");
+import { createServer } from "http";
+import dotenv from "dotenv";
+dotenv.config();
+import Router from "./router.js";
+import Home from "./pages/Home.js";
+import Error404 from "./pages/Error404.js";
 
 // Déclaration des routes
 const routes = {
@@ -21,7 +21,7 @@ const options = {
 const router = new Router(routes, options);
 
 // Création du serveur
-const server = http.createServer((req, res) => {
+const server = createServer((req, res) => {
   router.start(req, res);
 });
 

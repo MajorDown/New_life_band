@@ -1,5 +1,10 @@
-const fs = require("fs");
-const path = require("path");
+import { readFile } from "fs";
+import { join, extname as _extname, dirname } from "path";
+import { fileURLToPath } from "url";
+
+// Obtenir __dirname dans le contexte du module ES
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const mimeTypes = {
   ".html": "text/html",
@@ -63,11 +68,11 @@ class Router {
 
   // ...on traite la requête en tant que fichier statique
   handleStaticFiles(req, res) {
-    const filePath = path.join(__dirname, req.url);
-    const extname = String(path.extname(filePath)).toLowerCase();
+    const filePath = join(__dirname, req.url);
+    const extname = String(_extname(filePath)).toLowerCase();
     const contentType = mimeTypes[extname] || "application/octet-stream";
 
-    fs.readFile(filePath, (error, content) => {
+    readFile(filePath, (error, content) => {
       if (error) {
         if (error.code === "ENOENT") {
           this.handleError(req, res); // Utilise la page d'erreur définie si le fichier n'existe pas
@@ -130,4 +135,4 @@ class Router {
   }
 }
 
-module.exports = Router;
+export default Router;

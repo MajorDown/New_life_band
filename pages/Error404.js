@@ -1,6 +1,6 @@
-const Head = require("../components/Head");
-const Header = require("../components/Header");
-const Footer = require("../components/Footer");
+import Head from "../components/Head.js";
+import Header from "../components/Header.js";
+import Footer from "../components/Footer.js";
 
 const Error404 = (props) => {
   const { url } = props;
@@ -21,4 +21,4 @@ const Error404 = (props) => {
     `;
 };
 
-module.exports = Error404;
+export default Error404;

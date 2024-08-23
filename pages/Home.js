@@ -1,6 +1,6 @@
-const Head = require("../components/Head");
-const Header = require("../components/Header");
-const Footer = require("../components/Footer");
+import Head from "../components/Head.js";
+import Header from "../components/Header.js";
+import Footer from "../components/Footer.js";
 
 const Home = (props) => {
   return /*html*/ `
@@ -19,4 +19,4 @@ const Home = (props) => {
       `;
 };
 
-module.exports = Home;
+export default Home;
